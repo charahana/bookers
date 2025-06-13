@@ -1,0 +1,83 @@
+<div class="all-lists">
+
+  <h2>Books</h2>
+  <tr>
+        <td>リーダブルコード</td>
+        <td>より良いコードを書くためのシンプルで実践的なテクニック</td>
+        <td><a class="show_2036" href="/bookers/books/2036">Show</a></td>
+        <td><a class="edit_2036" href="/bookers/books/2036/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure ?" rel="nofollow" data-method="delete" href="/bookers/books/2036">Destroy</a></td>
+      </tr>
+      <tr>
+      <td>トラブル知らずのシステム設計</td>
+      <td>システム設計の要点を図解で説明してくれます</td>
+      <td><a class="show_2037" href="/bookers/books/2037">Show</a></td>
+      <td><a class="edit_2037" href="/bookers/books/2037/edit">Edit</a></td>
+      <td><a data-confirm="Are you sure ?" rel="nofollow" data-method="delete" href="/bookers/books/2037">Destroy</a></td>
+    </tr>
+    <tr>
+        <td>たのしいRuby</td>
+        <td>Rubyの入門におすすめです</td>
+        <td><a class="show_2038" href="/bookers/books/2038">Show</a></td>
+        <td><a class="edit_2038" href="/bookers/books/2038/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure ?" rel="nofollow" data-method="delete" href="/bookers/books/2038">Destroy</a></td>
+      </tr>
+      <tr>
+      <td>入門Git</td>
+      <td>gitについての基本操作から内部構造まで解説してくれます</td>
+      <td><a class="show_2039" href="/bookers/books/2039">Show</a></td>
+      <td><a class="edit_2039" href="/bookers/books/2039/edit">Edit</a></td>
+      <td><a data-confirm="Are you sure ?" rel="nofollow" data-method="delete" href="/bookers/books/2039">Destroy</a></td>
+    </tr>
+    <tr>
+        <td>アルゴリズム図鑑</td>
+        <td>アルゴリズムについてカラーイラストでしっかり解説してくれます</td>
+        <td><a class="show_2040" href="/bookers/books/2040">Show</a></td>
+        <td><a class="edit_2040" href="/bookers/books/2040/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure ?" rel="nofollow" data-method="delete" href="/bookers/books/2040">Destroy</a></td>
+      </tr>
+      <tr>
+        <td>達人プログラマー</td>
+        <td>プログラマ入門者は必読！</td>
+        <td><a class="show_2041" href="/bookers/books/2041">Show</a></td>
+        <td><a class="edit_2041" href="/bookers/books/2041/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure ?" rel="nofollow" data-method="delete" href="/bookers/books/2041">Destroy</a></td>
+      </tr>
+      <tr>
+      <td>データベース実践入門</td>
+      <td>効率的なSQL文を教えてくれます</td>
+      <td><a class="show_2042" href="/bookers/books/2042">Show</a></td>
+      <td><a class="edit_2042" href="/bookers/books/2042/edit">Edit</a></td>
+      <td><a data-confirm="Are you sure ?" rel="nofollow" data-method="delete" href="/bookers/books/2042">Destroy</a></td>
+    </tr> 
+    <tr>
+        <td>dfdf</td>
+        <td>df</td>
+        <td><a class="show_2043" href="/bookers/books/2043">Show</a></td>
+        <td><a class="edit_2043" href="/bookers/books/2043/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure ?" rel="nofollow" data-method="delete" href="/bookers/books/2043">Destroy</a></td>
+      </tr>
+
+  <div class="form">
+    <%= form_with model: @book, url:'/book', local:true do |f| %>
+      <h4>タイトル</h4>
+      <%= f.text_field :title %>
+      <h4>本文</h4>
+      <%= f.text_area :body %>
+    <% end %>
+  </div>
+
+  <h2>New book</h2>
+
+  <div class="list-wrap">
+    <% @books.each do |book| %>
+    <div class="list-box">
+      
+      <div class="list-comment">
+        <span class="list-body"><%= book.body %></span>
+        <span class="list-title"><%=link_to book.title, book_path(book.id) %></span>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
